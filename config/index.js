@@ -14,6 +14,7 @@ const config = {
   },
   copy: {
     patterns: [
+      { from: 'src/components/nearby', to: 'dist/components/nearby' }
     ],
     options: {
     }

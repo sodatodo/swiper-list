@@ -1,27 +1,38 @@
 import { Component, useState } from 'react'
-import { View, Text, Swiper, SwiperItem } from '@tarojs/components'
+import { View, Text, Swiper, SwiperItem, Button } from '@tarojs/components'
+import test from '../../components/nearby/nearby.wxs'
 import './index.scss'
 
 const Index = () => {
   const styleA = {
-    width: '100%',
-    height: '500px',
+    width: '100vh',
+    height: '100vh',
     backgroundColor: 'pink'
   }
   const styleB = {
-    width: '100%',
-    height: '500px',
+    width: '100vh',
+    height: '100vh',
     backgroundColor: 'cyan'
   }
-  const [index, setIndex] = useState(1)
-  const handleChange = (value) => {
-    setIndex(value.detail.current)
+  const [boxStyle, setBoxStyle] = useState('--append-height: 100vh')
+  const [height, setHeight] = useState(50)
+  const handleChange = (e) => {
+    if (e.detail.current === 0) {
+      setBoxStyle('--append-height: 100vh')
+    } else {
+      setBoxStyle('--append-height: 200vh')
+    }
   }
+  const handleChangeHeight = () => {
+    setHeight(150)
+  }
+  console.log(`test`, test)
   return (
     <View>
-      <View style={{ height: '500rpx', width: '100%', backgroundColor: 'blue'}}></View>
+      <View style={{ height: '500px', backgroundColor: 'blue' }} ></View>
       <Swiper
-        style={{ height: `${(index + 1) * 500}px`, width: '100%' }}
+        className='box'
+        style={boxStyle}
         onChange={handleChange}
       >
       <SwiperItem style={{ width: '50%' }}>
@@ -32,7 +43,9 @@ const Index = () => {
         <View style={styleA}>2</View>
       </SwiperItem>
     </Swiper>
+
     </View>
+
   )
 }
 
