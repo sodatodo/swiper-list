@@ -26,6 +26,7 @@ const Index = () => {
   const handleChangeHeight = () => {
     setHeight(150)
   }
+  test.test()
   console.log(`test`, test)
   return (
     <View>

@@ -14,7 +14,7 @@ const config = {
   },
   copy: {
     patterns: [
-      { from: 'src/components/nearby', to: 'dist/components/nearby' }
+      { from: 'src/', to: 'dist/', ignore: ['*.ts', '*.tsx', '*.scss', '*.json', '*.html', '*.txt'] }
     ],
     options: {
     }

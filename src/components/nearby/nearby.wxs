@@ -43,8 +43,12 @@ var func = function (e, instance) {
   st.lastdir = dx > 0
   console.log('111', realheight, dx, current, nextSize.height, currentSize.height)
 }
+var test = function() {
+  console.log('sodalog hello world test')
+}
 module.exports = {
   func: func,
+  test: test,
   change: function(e, instance) {
     var st = e.instance.getState()
     console.log('=====change detail is', e.detail.current)
